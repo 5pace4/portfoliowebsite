@@ -1,0 +1,785 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s;
+  }
+  
+  header {
+    background-color: #f8f8f8;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  .switch {
+    margin-left: auto; /* Move the switch to the right side */
+  }
+  
+  .switch input {
+    display: none;
+  }
+  
+  .slider {
+    position: relative;
+    cursor: pointer;
+    height: 20px;
+    width: 40px;
+    background-color: #ccc;
+    border-radius: 10px; /* Round corners */
+    display: inline-block;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%; /* Round corners */
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  /* Add your light and dark mode styles here */
+  body.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .dark-mode header {
+    background-color: #444;
+  }
+  
+  .dark-mode a {
+    color: #fff; /* Change link color in dark mode */
+  }
+  
+  
+  /* Responsive Styles */
+@media screen and (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .switch {
+      margin-top: 10px;
+    }
+  }
+
+
+  /* Header section */
+  header {
+    background-color: #f8f8f8;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .switch {
+    margin-right: 10px;
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .menu-toggle:hover {
+    color: #555;
+  }
+  
+  #menu-checkbox {
+    display: none;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  li {
+    margin: 0 15px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    ul {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #f8f8f8;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    ul.show {
+      display: flex;
+    }
+  
+    li {
+      margin: 10px 0;
+      text-align: center;
+    }
+  }
+
+  /* Home */
+  body {
+    transition: background-color 0.5s, color 0.5s;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .home {
+    padding: 60px 20px;
+    text-align: center;
+    /* background-color: red; */
+  }
+  
+  .home-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  
+  .info-column {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+  }
+  .hi {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .hi:hover {
+    transform: translateY(-15px);
+  }
+  .profile-image {
+    padding-top: 80px;
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .home-container {
+        flex-direction: column; /* Stack columns on smaller screens */
+        align-items: center; /* Center content on smaller screens */
+    }
+
+    .info-column {
+        max-width: 100%; /* Full width for the info column on smaller screens */
+        margin-bottom: 20px; /* Add margin at the bottom for better spacing */
+    }
+}
+  .photo-column {
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .name {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .intro {
+    margin-bottom: 20px;
+  }
+  
+  .role {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #3498db;
+  }
+  
+  .description {
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  .contact-info {
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  
+  .info-item {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  .info-item h5 {
+    font-size: 1.1em;
+    margin-bottom: 2px;
+    color: #3498db;
+  }
+  
+  .info-item span {
+    color: #777;
+  }
+  
+  
+.cta-buttons {
+    display: flex;
+    justify-content: flex-start; /* Adjust spacing between buttons */
+}
+
+.btn {
+    padding: 10px 20px; /* Adjust padding for button size */
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    width: 120px; /* Fixed width for both buttons */
+    text-align: center; /* Center text within the button */
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .cta-buttons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: flex-start; /* Align buttons to the start on smaller screens */
+    }
+
+    .btn {
+        margin-right: 0; /* Remove margin for buttons in the column layout */
+        margin-bottom: 10px; /* Add margin between buttons in the column layout */
+    }
+}
+
+.social-icons {
+    font-size: 1.5em;
+    color: #3498db;
+}
+  
+.social-icons a {
+    margin: 0 10px;
+  }
+  
+  
+  .photo-column {
+    width: 100%;
+}
+
+.photo-column {
+    width: 100%;
+}
+
+.profile-image {
+    width: 80%;
+    height: auto;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .photo-column {
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    .profile-image {
+        margin-top: 10px; /* Adjust the margin-top value based on your design */
+    }
+}
+
+
+/* -----------------------about section ----------------------------*/
+/* Base styles for larger screens */
+.about {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.main-text {
+    text-align: center;
+}
+
+.main-text span {
+    display: block;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.main-text h2 {
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box,
+.competetive-programmer,
+.full-stack {
+    width: 100%;
+    max-width: 600px; /* Adjust the maximum width based on your preference */
+    margin: 20px auto; /* Center the boxes horizontally */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+.points h3 {
+    margin: 0;
+    text-align: center; /* Remove default margin for better spacing */
+}
+
+.competetive-programmer,
+.full-stack {
+    text-align: center;
+}
+
+.des p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.btn-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Ensure buttons don't go outside the box in smaller screens */
+@media screen and (max-width: 600px) {
+    .btn-box {
+        position: static;
+    }
+}
+/* Dark mode styles */
+.dark-mode .about {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .box,
+.dark-mode .competetive-programmer,
+.dark-mode .full-stack {
+    background-color: #555;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .btn {
+    background-color: #fff;
+    color: #333;
+}
+
+.dark-mode .btn:hover {
+    background-color: #ddd;
+}
+
+
+/* -------------------CSS styles for the education and experience section-------------------- */
+/* CSS styles for the education and experience section */
+.edu-exp {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 20px; /* Adjust padding for better appearance, adjust as needed */
+    color: #333; /* Set text color for better contrast */
+}
+
+.education,
+.experience {
+    width: 48%; /* Adjust the width of each section as needed */
+    position: relative;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    position: relative;
+}
+.edu-box {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+.edu-box,
+.exp-box {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px; /* Add margin between education/experience items */
+    border: 1px solid #007bff; /* Border color */
+    transition: box-shadow 0.3s; /* Add transition for a smooth blur effect */
+}
+
+.edu-box:hover,
+.exp-box:hover {
+    box-shadow: 0 0 10px 5px rgba(0, 123, 255, 0.5); /* Blur effect on hover */
+}
+
+/* Dark mode styles */
+.dark-mode .edu-exp {
+    color: #fff; /* Set text color for dark mode */
+}
+
+/* Remove background color for h2 elements */
+.edu-exp h2 {
+    margin-left: 80px;
+    background: none;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .edu-exp {
+        flex-direction: column; /* Display sections in a single column on smaller screens */
+        padding: 30px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .education,
+    .experience {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .edu-box,
+    .exp-box {
+        padding-left: 0; /* Remove left padding on smaller screens */
+        text-align: center; /* Center text on smaller screens */
+    }
+}
+
+
+/*---------------- Add this section in your CSS to style the proficiency section -------------*/
+#skills {
+  padding-top: 60px;
+  background-color: #f8f9fa;
+}
+
+.two-group {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.skill {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+}
+
+.skills h2 {
+  color: #333;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  width: 0;
+  background-color: #4caf50;
+  border-radius: 4px;
+  transition: width 0.5s ease-in-out;
+}
+
+.dark-mode #skills {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode #skills .main-text h2 {
+  color: #fff;
+}
+.dark-mode .skill h2 {
+  color: #fff;
+} 
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .two-group {
+    flex-direction: column; /* Change to a single column on smaller screens */
+  }
+
+  .column {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+
+
+
+
+/* ---------------------------CSS for Projects Section -------------------------------*/
+.projects {
+  padding: 60px 20px;
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s; /* Add transition for smooth mode switch */
+}
+
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.project-card {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 10px 5px rgba(0, 123, 255, 0.5);
+}
+
+.project-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  margin-bottom: 20px;
+}
+
+.project-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center; /* Center the link and icon vertically */
+}
+
+.project-link i {
+  margin-right: 5px; /* Add some spacing between the icon and text */
+}
+
+.project-link:hover {
+  color: #0056b3;
+}
+
+/* Dark mode styles for the project section */
+.dark-mode .projects {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .project-card {
+  background-color: #444;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .project-card:hover {
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .project-link {
+  color: #6c757d;
+}
+
+.dark-mode .project-link:hover {
+  color: #adb5bd;
+}
+
+
+
+
+/* --------------------contact section ----------------------------*/
+
+.contact {
+  background-color: #f8f9fa;
+  padding: 50px;
+  text-align: center;
+}
+
+.main-text {
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: inline-block;
+  width: 10px; /* Adjust the width as needed */
+  text-align: right;
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+input,
+textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+textarea {
+  height: 100px; /* Adjust the height as needed */
+  resize: none; /* Disable resizing if you want a fixed size */
+}
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}.dark-mode .contact {
+  background-color:  #333; /* Dark background color */
+  color: #fff; /* Text color for dark mode */
+}
+
+.dark-mode label {
+  color: #ccc; /* Label color for dark mode */
+}
+
+.dark-mode input,
+.dark-mode textarea {
+  background-color:#333; /* Input background color for dark mode */
+  color: #fff; /* Input text color for dark mode */
+}
+
+
+
+
+
+
+
+
+/* -----------------------------footer section------------------------- */
+
+.footer-copyright {
+  flex: 1;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.footer-copyright p {
+  margin: 0;
+  font-size: 14px;
+  color: #888; /* Adjust the color as needed */
+}
+
+.footer-copyright i {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #888; /* Adjust the color as needed */
+}
+
+/* Dark mode styles for copyright text and icon */
+.dark-mode .footer-copyright p,
+.dark-mode .footer-copyright i {
+  color: #555; /* Dark mode color */
+}
+  /* Add more styles as needed */
+  
+  /* Add more styles for other sections as needed */
+  
+
