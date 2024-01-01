@@ -195,3 +195,72 @@ function createProjectCard(project) {
   return projectCard;
 }
 
+
+
+
+// *************************Academic Excellence Graph***********************
+
+// Real data for semesters and CGPA
+const semesters = ['Semester 1', 'Semester 2', 'Semester 3', 'Semester 4', 'Semester 5', 'Semester 6', 'Semester 7', 'Semester 8'];
+const cgpaData = [3.53, 3.61, 3.76, 3.89, 3.73,];
+
+// Get the canvas element and its context
+const canvas = document.getElementById('academicGraph');
+const context = canvas.getContext('2d');
+
+// Set up the axes and labels
+const xAxis = 50; // starting point for x-axis
+const yAxis = 350; // starting point for y-axis
+const graphWidth = 700; // width of the graph
+const graphHeight = 300; // height of the graph
+
+// Draw x-axis
+context.beginPath();
+context.moveTo(xAxis, yAxis);
+context.lineTo(xAxis + graphWidth, yAxis);
+context.stroke();
+
+// Draw y-axis
+context.beginPath();
+context.moveTo(xAxis, yAxis);
+context.lineTo(xAxis, yAxis - graphHeight);
+context.stroke();
+
+// Plot the real data points and add labels
+for (let i = 0; i < semesters.length; i++) {
+  const x = xAxis + (i * (graphWidth / (semesters.length - 1)));
+  const y = yAxis - ((cgpaData[i] - 3.5) * (graphHeight / 1)); // Using 3.5 as the baseline
+
+  // Draw a point for each semester
+  context.beginPath();
+  context.arc(x, y, 5, 0, 2 * Math.PI);
+  context.fillStyle = '#007bff'; // Blue color
+  context.fill();
+  context.stroke();
+
+  // Draw a line connecting points
+  if (i > 0) {
+    const prevX = xAxis + ((i - 1) * (graphWidth / (semesters.length - 1)));
+    const prevY = yAxis - ((cgpaData[i - 1] - 3.5) * (graphHeight / 1));
+    context.beginPath();
+    context.moveTo(prevX, prevY);
+    context.lineTo(x, y);
+    context.strokeStyle = '#007bff'; // Blue color
+    context.stroke();
+  }
+
+  // Add labels for semesters
+  context.fillStyle = '#000';
+  context.fillText(semesters[i], x - 15, yAxis + 20);
+
+  // Add labels for CGPA values
+  context.fillText(cgpaData[i].toFixed(2), x - 15, y - 10);
+}
+// Redraw the graph when the window is resized
+window.addEventListener('resize', function() {
+  setCanvasSize();
+  drawGraph();
+});
+
+// Initial draw
+drawGraph();
