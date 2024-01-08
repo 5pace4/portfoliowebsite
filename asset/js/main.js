@@ -1,36 +1,75 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Check for user's dark mode preference in local storage
-  const isDarkMode = localStorage.getItem("darkMode") === "enabled";
-  const modeToggle = document.getElementById("modeToggle");
+document.addEventListener('DOMContentLoaded', function () {
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  const icon = document.getElementById('icon');
+  const body = document.body;
 
-  // Set initial dark mode state
-  if (isDarkMode) {
-      document.body.classList.add("dark-mode");
-      modeToggle.checked = true;
+  // Check user preference in localStorage
+  const isDarkModePreferred = localStorage.getItem('darkMode') === 'true';
+
+  // Initialize dark mode based on user preference
+  if (isDarkModePreferred) {
+    body.classList.add('dark-mode');
+    icon.className = 'bx bx-sun';
+  } else {
+    body.classList.remove('dark-mode');
+    icon.className = 'bx bx-moon';
   }
 
-  // Toggle dark mode on switch change
-  modeToggle.addEventListener("change", function () {
-      if (modeToggle.checked) {
-          enableDarkMode();
-      } else {
-          disableDarkMode();
-      }
+  darkModeToggle.addEventListener('click', function () {
+    const isDarkMode = body.classList.toggle('dark-mode');
+    icon.className = isDarkMode ? 'bx bx-sun' : 'bx bx-moon';
+
+    // Save user preference to localStorage
+    localStorage.setItem('darkMode', isDarkMode);
   });
-
-  // Function to enable dark mode
-  function enableDarkMode() {
-      document.body.classList.add("dark-mode");
-      localStorage.setItem("darkMode", "enabled");
-  }
-
-  // Function to disable dark mode
-  function disableDarkMode() {
-      document.body.classList.remove("dark-mode");
-      localStorage.setItem("darkMode", null);
-  }
 });
 
+
+/////////////////////////////
+
+//                       scroll on top                        //
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    const navbar = document.querySelector('header');
+
+    window.addEventListener('scroll', function () {
+      const scrollThreshold = 300;
+
+      if (window.scrollY > scrollThreshold && !isNavbarVisible()) {
+        scrollToTopButton.style.display = 'block';
+      } else {
+        scrollToTopButton.style.display = 'none';
+      }
+    });
+
+    function isNavbarVisible() {
+      const rect = navbar.getBoundingClientRect();
+      return (rect.top >= 0 && rect.bottom <= window.innerHeight);
+    }
+
+    scrollToTopButton.addEventListener('click', function () {
+      scrollToTop();
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  });
+
+
+
+
+
+
+
+
+//////////////////////////////////////
 
 
   
@@ -180,7 +219,7 @@ function createProjectCard(project) {
   link.target = '_blank';
 
   const linkIcon = document.createElement('i');
-  linkIcon.classList.add('bx', 'bx-link'); // Add the appropriate class for the link icon
+  linkIcon.classList.add('bx', 'bxl-github'); // Add the appropriate class for the link icon
 
   const linkText = document.createElement('span');
   linkText.textContent = 'View on GitHub';
@@ -264,3 +303,15 @@ window.addEventListener('resize', function() {
 
 // Initial draw
 drawGraph();
+
+
+
+
+
+
+///////////////////////////////
+
+
+
+
+////////////////

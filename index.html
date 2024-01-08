@@ -9,12 +9,17 @@
   <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 
 </head>
 <body>
     <header>
         <h1><span style="color: red;">T</span>ofayel.</h1>
         <div class="header-right">
+
 
           <nav class="navbar">
             <ul>
@@ -34,16 +39,16 @@
             <span class="slider round"></span>
           </label> -->
 
-          <label class="switch" for="modeToggle">
-            <input type="checkbox" id="modeToggle">
-            <i class='bx bx-moon'></i>
-          </label>
-
+          <div class="dark-mode-toggle" id="darkModeToggle">
+            <i class='bx' id="icon"></i>
+          </div>
+    
           <label class="menu-toggle" for="menu-checkbox">&#9776;</label>
           <input type="checkbox" id="menu-checkbox">
 
         </div>
-      </header>
+   </header>
+      
       
 
 <!-------------------Home section --------------------->
@@ -76,19 +81,19 @@
         </div> 
             
         <div class="social-icons" data-aos="fade-up" data-aos-duration="2000">
-            <a href="https://www.linkedin.com/in/tofayel-ahmmed-babu-ba2019206/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.linkedin.com/in/tofayelahmmedbabu/" target="_blank"><i class='bx bxl-linkedin custom-size'></i></a>
             <!-- <a href="https://twitter.com/yourusername" target="_blank"><i class='bx bxl-twitter'></i></a> -->
-            <a href="https://github.com/TofayelAhmmedBabu" target="_blank"><i class='bx bxl-github'></i></a>
-            <a href="https://www.facebook.com/ahmmed.tofayel.05" target="_blank"><i class='bx bxl-facebook'></i></a>
-            <a href="https://www.instagram.com/ahmmed.tofayel_/" target="_blank"><i class='bx bxl-instagram'></i></a>
-            <a href="https://tofayelahmmedbabu.blogspot.com/" target="_blank"><i class='bx bxl-blogger'></i></a>
+            <a href="https://github.com/TofayelAhmmedBabu" target="_blank"><i class='bx bxl-github custom-size'></i></a>
+            <a href="https://www.facebook.com/ahmmed.tofayel.05" target="_blank"><i class='bx bxl-facebook custom-size'></i></a>
+            <a href="https://www.instagram.com/ahmmed.tofayel_/" target="_blank"><i class='bx bxl-instagram custom-size'></i></a>
+            <a href="https://tofayelahmmedbabu.blogspot.com/" target="_blank"><i class='bx bxl-blogger custom-size'></i></a>
             <!-- Add more social icons as needed -->
           </div>
           
       </div>
 
       <div class="photo-column" data-aos="zoom-in" data-aos-duration="2000">
-        <img class="profile-image" src="/asset/img/me-modified.png" alt="your-photo">
+        <img class="profile-image" src="/asset/img/home-right.png" alt="your-photo">
       </div>
     </div>
 
@@ -101,8 +106,12 @@
         <h2>ABOUT ME</h2>
     </div>
 
-    <div class="content-container">
-        <div class="box" data-aos="fade-right" data-aos-duration="1500">
+    <div class="content-container-update">
+      <div>
+        <img src="/asset/img/about-me.png" alt="">
+      </div>
+        <div class="content-container">
+          <div class="box" data-aos="fade-right" data-aos-duration="1500">
             <div class="points">
                 <h3>3 Years Experiences</h3>
                 <h3>1200+ Problem Solved</h3>
@@ -129,68 +138,57 @@
                 <a class="btn" href="https://github.com/TofayelAhmmedBabu" target="_blank">Know More</a>
             </div> 
         </div>
+        </div>
     </div>
 </section>
 
 <!-- Education and Experience Section -->
 <section class="education" id="education" data-aos="fade-right" data-aos-duration="2000">
-        
-      <div class="main-text" data-aos="fade-up" data-aos-duration="1000">
-        <span>Know my academic qulaification</span>
-      <h2>EDUCATION</h2><br><br><br>
+  <div class="main-text" data-aos="fade-up" data-aos-duration="1000">
+    <span>Know my academic qualification</span>
+    <h2>EDUCATION</h2><br><br><br>
 
-      <h2>Academic Excellence Graph</h2>
-      <canvas id="academicGraph" width="800" height="500"></canvas>
-        
-        <div class="contents">
-            <div class="edu-box">
-                <!-- <div class="line"></div>
-                <div class="circle"></div> -->
-                <h3>BSc in Computer Science & Engineering (CSE)</h3>
-                <i>Chittagong University of Engineering and Technology (CUET), Chittagong-4349, Bangladesh</i>
-                 <br>Expected Graduation: [Feb, 2025]
-                 <br>Current CGPA: 3.72 / 4.0
-                <p>
-                  
-                  I am currently in the final year (7th semester) of my Bachelor's degree in Computer Science & Engineering at Chittagong University of Engineering and Technology (CUET). Throughout my academic journey, I have demonstrated a strong commitment to academic excellence, reflected in my current Cumulative Grade Point Average (CGPA) of 3.72.
-                  
-                  My coursework has provided me with a comprehensive understanding of computer science and engineering principles, covering a diverse range of topics such as algorithms, data structures, software engineering, and computer architecture. The practical aspects of the curriculum, including hands-on projects and laboratory work, have equipped me with valuable problem-solving skills and a solid foundation in programming languages.
-                  
-                  As a dedicated student, I have actively engaged in various extracurricular activities, including [mention any relevant activities, clubs, or projects]. These experiences have not only complemented my academic learning but have also fostered teamwork, leadership, and innovative thinking.
-                  
-                  I am excited to apply the knowledge and skills gained during my academic journey to real-world challenges and contribute to the dynamic field of computer science and engineering. My academic achievements, coupled with my passion for technology, position me as a motivated and capable candidate for [mention any specific goals or aspirations].
-                </p>
-            </div>
-            <div class="edu-box">
-                <!-- <div class="line"></div>
-                <div class="circle"></div> -->
-
-                <h3>Higher Secondary Certificate (HSC)</h3>
-                <i>Comilla Victoria Government College | 2017 - 2019</i>
-                <br>
-                Grade: 5.0 / 5.0
-                <p>
-                    I successfully completed my Higher Secondary Certificate (HSC) from Comilla Victoria Government College in the science group. The duration of the program spanned from 2017 to 2019. During this period, I dedicated myself to rigorous coursework, delving into various scientific disciplines. I am proud to have achieved a perfect grade of 5.0/5.0, reflecting my commitment to academic excellence. This educational journey not only equipped me with a strong foundation in science but also fostered critical thinking and problem-solving skills that will undoubtedly contribute to my future academic and professional endeavors.
-                </p>
-            </div>
-            <div class="edu-box">
-                <!-- <div class="line"></div>
-                <div class="circle"></div> -->
-
-                <h3>Secondary School Certificate(SSC)</h3>
-                <i>Batakandi A.H. High School | 2015 - 2017</i>
-                <br>
-                Grade: 5.0 / 5.0
-                <p>
-                  I completed my Secondary School Certificate (SSC) education at Batakandi A.H. High School, specializing in the science stream, with an outstanding achievement of a perfect grade of 5.0/5.0. This academic accomplishment not only reflects my dedication to scholarly pursuits but also underscores my commitment to maintaining the highest standards of excellence.
-
-                  In recognition of my academic achievements, I was awarded a prestigious government scholarship during my SSC years. This accolade not only serves as a testament to my academic prowess but also underscores the positive impact of my efforts in the realm of education.
-
-                  The experience of pursuing SSC at Batakandi A.H. High School has been transformative, providing me with a solid foundation in science and fostering essential analytical and problem-solving skills. These formative years have not only contributed to my academic journey but have also fueled my aspirations for continued success in future endeavors.
-                </p>
-            </div>
+    <div class="contentedu">
+      <div class="contents">
+        <div class="edu-box">
+          <h3>Chittagong University of Engineering and Technology (CUET)</h3>
+          <p>
+            BSc in Computer Science & Engineering (CSE)
+            <br>February 2020 - present<br> Chittagong-4349, Bangladesh
+            <br>Current CGPA: 3.72 / 4.0
+          </p>
+          <div class="line"></div>
         </div>
+        <!-- Add similar structures for other edu-boxes -->
+        <div class="edu-box">
+          <h3>Comilla Victoria Government College</h3>
+          <p>
+            Higher Secondary Certificate (HSC)<br> April 2017 - April 2019 <br>
+            Cumilla, Chittagong, Bangladesh
+            <br>
+            Grade: 5.0 / 5.0
+          </p>
+          <div class="line"></div>
+        </div>
+        <div class="edu-box">
+          <h3>Batakandi A.H. High School</h3>
+          <p>
+            Secondary School Certificate(SSC)
+            <br>
+            Cumilla, Chittagong, Bangladesh
+            <br>
+            Grade: 5.0 / 5.0
+          </p>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+       <!-- <div>
+          <h2>Academic Excellence Graph</h2>
+          <canvas id="academicGraph" width="800" height="500"></canvas>
 
+        </div> -->
+  </div>
 </section>
 
 
@@ -336,6 +334,10 @@
     <h2 data-aos="fade-up" data-aos-duration="2000">Get in Touch</h2>
   </div>
 
+
+  <div class="contact-containers">
+
+
   <div class="contact-form" data-aos="fade-up" data-aos-duration="2000">
     <form action="https://formspree.io/f/xwkjgplz" method="POST">
       <!-- Your form fields go here -->
@@ -361,6 +363,16 @@
       <button type="submit">Submit</button>
     </form>
   </div>
+
+  <div class="mail-container">
+      
+    <a href="mailto:tofayelahmmedbabu@gmail.com"><i class='bx bxl-gmail contact-custom-size'></i></a>
+    <a href="https://m.me/ahmmed.tofayel.05"><i class='bx bxl-messenger contact-custom-size' ></i></a>
+    <a href="https://wa.me/01889211881"><i class='bx bxl-whatsapp contact-custom-size' ></i></a>
+
+  </div>
+
+  </div>
 </section>
 
 <!------------------------ footer section ------------------------->
@@ -374,7 +386,14 @@
   </div>
 </section>
 
+  <div class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+    <!-- <box-icon type='solid' name='hand-up'></box-icon> -->
+    <img src="/asset/img/up-sign.png" alt="" height="40px" width="40px">
+  </div>
 
   <script src="/asset/js/main.js"></script>
+
+
 </body>
+
 </html>
