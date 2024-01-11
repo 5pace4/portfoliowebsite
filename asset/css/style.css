@@ -726,10 +726,12 @@ canvas {
   background-color: #444;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
-.dark-mode .role-description, .company-name {
+.dark-mode .role-description {
   color: #fff ;
 }
-
+.dark-mode .company-name {
+  color: #fff ;
+}
 .dark-mode .learn-more {
   color:  #6c757d;;
 }
