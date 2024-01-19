@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function() {
         datasets: [{
           label: 'CGPA',
           data: cgpaValues,
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 2,
-          pointBackgroundColor: 'rgba(75, 192, 192, 1)',
-          pointRadius: 5,
-          pointHoverRadius: 8,
+          borderColor: 'rgb(255, 194, 0)',
+          borderWidth: 1.5,
+          pointBackgroundColor: 'rgb(255, 194, 0)',
+          pointRadius: 7,
+          pointHoverRadius: 9,
         }]
       },
       options: {
@@ -59,6 +59,8 @@ document.addEventListener("DOMContentLoaded", function() {
         ["Digital Signal Processing", "Software Development with Java", "Algorithm Desing & Analysis", "Database Management System"],
         ["Data Communication", "Operating System", "Theory of Computing", "System Analysis & Design"],
         ["Software Engineering", "Computer Networks", "Computer Architecture", "Artificial Intelligence"],
+        [],
+        [],
       ];
   
       var courseListHTML = '<ul>';
@@ -81,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
         courseListContainer.innerHTML += courseListHTML;
         courseListContainer.style.display = 'block';
       } else {
-        courseListContainer.innerHTML = '<p style="color: red;">*Only CS fundamental Courses are included here.</p>';
+        courseListContainer.innerHTML = '<p style="color: red;">*Only Departmental(CS) Courses are included here.</p>';
         courseListContainer.style.display = 'none';
       }
     }
