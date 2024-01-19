@@ -731,3 +731,11 @@ font-size: 32px;
 .mail-container a {
   margin-right:  20px;
 }
+#toggleButton {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+}
+#toggleIcon.reverse-icon {
+  transform: rotate(180deg);
+}
