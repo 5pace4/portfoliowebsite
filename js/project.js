@@ -5,7 +5,7 @@ async function fetchProjects() {
   const container = document.getElementById('project-container');
 
   try {
-    const response = await fetch('https://api.github.com/users/TofayelAhmmedBabu/repos');
+    const response = await fetch('https://api.github.com/users/5pace4/repos');
     const projects = await response.json();
 
     projects.forEach(project => {
