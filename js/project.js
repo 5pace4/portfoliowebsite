@@ -1,4 +1,3 @@
-// JavaScript for Projects Section
 document.addEventListener('DOMContentLoaded', fetchProjects);
 
 async function fetchProjects() {
@@ -9,8 +8,11 @@ async function fetchProjects() {
     const projects = await response.json();
 
     projects.forEach(project => {
-      const projectCard = createProjectCard(project);
-      container.appendChild(projectCard);
+      // Check if the project has a description
+      if (project.description) {
+        const projectCard = createProjectCard(project);
+        container.appendChild(projectCard);
+      }
     });
   } catch (error) {
     console.error('Error fetching projects:', error);
@@ -27,7 +29,7 @@ function createProjectCard(project) {
 
   const description = document.createElement('p');
   description.classList.add('project-description');
-  description.textContent = project.description || 'No description provided.';
+  description.textContent = project.description;
 
   const link = document.createElement('a');
   link.classList.add('project-link');
@@ -35,7 +37,7 @@ function createProjectCard(project) {
   link.target = '_blank';
 
   const linkIcon = document.createElement('i');
-  linkIcon.classList.add('bx', 'bxl-github'); // Add the appropriate class for the link icon
+  linkIcon.classList.add('bx', 'bxl-github');
 
   const linkText = document.createElement('span');
   linkText.textContent = 'View on GitHub';
