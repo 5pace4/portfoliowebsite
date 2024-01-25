@@ -1082,3 +1082,64 @@ font-size: 32px;
   display: none;
   z-index: 1;
 }
+
+.competitive-programming {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px;
+}
+
+.competitive-programming .card {
+  width: 450px;
+  height: 500px;
+  padding-bottom: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.competitive-programming .card img {
+  width: 100%;
+  height: 250px;
+  border-radius: 4px;
+}
+
+.competitive-programming .card-title {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.competitive-programming .card-description {
+  font-size: 14px;
+  color: #555555;
+  margin-top: 10px;
+}
+
+.competitive-programming .button-container {
+  margin-top: 20px;
+}
+
+.competitive-programming .button {
+  padding: 4px 5px;
+  font-size: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #919306;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.dark-mode .competitive-programming .card{
+  background-color: #0d0c15;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 768px) {
+  .competitive-programming .card {
+      width: 100%;
+  }
+}
