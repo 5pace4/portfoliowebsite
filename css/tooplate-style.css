@@ -926,11 +926,12 @@ font-size: 32px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 60px;
 }
 
 .project-card {
-  width: 300px;
-  margin: 20px;
+  width: 400px;
+  margin-top: 20px;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -1088,12 +1089,13 @@ font-size: 32px;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin: 30px;
+  margin: 60px;
 }
 
 .competitive-programming .card {
   width: 450px;
-  height: 500px;
+  height: 520px;
+  margin-top: 20px;
   padding-bottom: 40px;
   background-color: #ffffff;
   border-radius: 8px;
