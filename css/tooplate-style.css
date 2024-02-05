@@ -1203,3 +1203,31 @@ font-size: 32px;
     }
   
 }
+
+
+.testimonial-container {
+  margin-top: 50px;
+}
+.testimonial {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+  max-width: 70%;
+  text-align: center;
+}
+.testimonial blockquote {
+  margin-bottom: 20px;
+  font-size: 1.2rem; 
+  color: dimgrey;
+}
+.testimonial img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

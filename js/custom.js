@@ -52,3 +52,36 @@
   $('.social-links a').tooltip();
 
 })(jQuery);
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    animateTestimonials();
+  }, 10000); // Delay the animation for 10 seconds
+
+  function animateTestimonials() {
+    var testimonials = document.querySelectorAll('.bxslider li');
+    testimonials.forEach(function(item, index) {
+      setTimeout(function() {
+        item.classList.add('active');
+      }, index * 1000); // Add a delay for each testimonial
+    });
+  }
+});
+
+
+
+// testimonial
+
+
+$(document).ready(function() {
+  // Start the carousel interval after 1 second
+  setTimeout(function() {
+    $('#testimonialCarousel').carousel();
+    setInterval(function() {
+      $('#testimonialCarousel').carousel('next');
+    }, 40000);  // Adjust the interval time (in milliseconds) as needed
+  }, 40000);
+});
