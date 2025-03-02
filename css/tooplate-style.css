@@ -1382,3 +1382,7 @@ body.dark .project .list-group-item a {
 body.dark .project .list-group-item a:hover {
   color: #ffffff;
 }
+.large-sup {
+  font-size: 16px;
+  color: red;
+}
