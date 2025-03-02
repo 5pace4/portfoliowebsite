@@ -1086,75 +1086,88 @@ body.dark .search-field i {
   margin-top: 50px;
 }
 .modal-dialog {
-  float: left;
-  margin-left: 40px;
-  margin-top: 60px;
+  margin: auto;
 }
 .modal-content {
-  width: 900px;
-  height: 500px;
+  width: 100%;
+  height: auto;
+  max-height: 90vh; /* Prevents modal from exceeding viewport height */
   background-color: whitesmoke;
-  overflow: hidden; /* Prevents overflow issues */
-}
-#cgpaChart {
-  max-width: 90%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Responsive adjustments */
+/* Ensure Chart & Course List Fit Properly */
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+}
+
+/* Chart Section */
+#cgpaChart {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 750px;
+  display: block;
+  margin: auto;
+}
+
+/* Course List Below Chart */
+#courseListContainer {
+  width: 100%;
+  max-height: 200px; /* Enables scrolling if needed */
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Ensure Course Text Wraps Properly */
+#courseListContainer ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  white-space: normal; /* Allows text wrapping */
+  overflow: hidden;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+/* Ensure Proper Spacing for Course Items */
+#courseListContainer li {
+  display: block;
+  margin-bottom: 5px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Responsive Fixes */
 @media (max-width: 945px) {
   .modal-content {
-    margin-top: 60px;
     max-width: 90vw;
-  }
-  .modal-dialog {
-    margin-left: 10px;
   }
 }
 
-/* Handle Completed Course Position & Scrolling */
+/* Ensure Everything Stacks Properly on Small Screens */
 @media (max-width: 769px) {
-  .modal-footer p {
-    display: none;
-  }
-
-  /* Ensure modal body structure */
-  .modal-body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Ensure completed course list moves below the chart */
   .modal-body .row {
-    display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack elements vertically */
   }
 
-  /* Ensure completed course list is scrollable inside modal */
+  .col-md-8,
+  .col-md-4 {
+    width: 100% !important; /* Full width for both chart & course list */
+  }
+
   #courseListContainer {
-    max-height: 150px; /* Adjust to ensure full visibility */
-    overflow-y: auto; /* Enables scrolling */
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #ddd;
-    width: 100%;
-  }
-
-  /* Ensure course names wrap to multiple lines */
-  #courseListContainer ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    white-space: normal; /* Allows text wrapping */
-    overflow: hidden; /* Prevents content from overflowing */
-    word-wrap: break-word; /* Ensures text breaks properly */
-  }
-
-  /* Ensure proper spacing for list items */
-  #courseListContainer li {
-    display: block;
-    margin-bottom: 5px;
-    line-height: 1.4;
-    word-break: break-word;
+    border-left: none;
+    border-top: 1px solid #ddd; /* Add a top border */
+    max-height: 150px; /* Adjust height for small screens */
   }
 }
 
@@ -1332,3 +1345,40 @@ body.dark .search-field i {
 }
 
 /* --------------------research section css end-----------------*/
+
+.project .list-group-item:not(:last-child)::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.2); /* Light mode separator */
+  margin-top: 15px;
+}
+
+/* Dark Mode Adjustments */
+body.dark .project {
+  background-color: #0c0c0d;
+  color: #ffffff;
+}
+
+body.dark .project .list-group-item {
+  background-color: #0c0c0d;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dark Mode Horizontal Line */
+body.dark .project .list-group-item:not(:last-child)::after {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark .project .list-group-item strong,
+body.dark .project .list-group-item span {
+  color: #ffffff;
+}
+
+body.dark .project .list-group-item a {
+  color: #ffc200;
+}
+
+body.dark .project .list-group-item a:hover {
+  color: #ffffff;
+}
