@@ -1,96 +1,139 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var cgpaChartCanvas = document.getElementById("cgpaChart");
-    var chartModal = new bootstrap.Modal(document.getElementById('chartModal'));
-  
-    // Dummy data (replace with your actual data)
-    var semesters = ["1st semester", "2nd Semester", "3rd Semester", "4th semester", "5th semseter", "6th semester", "7th semester", "8th semester"];
-    var cgpaValues = [3.58, 3.63, 3.76, 3.88, 3.73, 0, 0, 0];
-  
-    // Create a chart
-    var cgpaChart = new Chart(cgpaChartCanvas, {
+document.addEventListener('DOMContentLoaded', function () {
+  var cgpaChartCanvas = document.getElementById('cgpaChart');
+  var chartModal = new bootstrap.Modal(document.getElementById('chartModal'));
+
+  // Semester & CGPA Data
+  var semesters = [
+    '1st semester',
+    '2nd Semester',
+    '3rd Semester',
+    '4th semester',
+    '5th semester',
+    '6th semester',
+    '7th semester',
+    '8th semester',
+  ];
+  var cgpaValues = [3.58, 3.63, 3.76, 3.88, 3.73, 3.85, 3.62, 0];
+
+  // Ensure Chart is properly rendered in modal
+  var cgpaChart;
+
+  function createChart() {
+    if (cgpaChart) {
+      cgpaChart.destroy(); // Destroy old chart to prevent duplication
+    }
+    cgpaChart = new Chart(cgpaChartCanvas, {
       type: 'line',
       data: {
         labels: semesters,
-        datasets: [{
-          label: 'CGPA',
-          data: cgpaValues,
-          borderColor: 'rgb(255, 194, 0)',
-          borderWidth: 1.5,
-          pointBackgroundColor: 'rgb(255, 194, 0)',
-          pointRadius: 7,
-          pointHoverRadius: 9,
-        }]
+        datasets: [
+          {
+            label: 'CGPA',
+            data: cgpaValues,
+            borderColor: 'rgb(255, 165, 0)', // Orange border
+            backgroundColor: 'rgba(255, 165, 0, 0.2)', // Light orange fill
+            borderWidth: 2,
+            tension: 0.4, // Smoother line
+            pointBackgroundColor: 'rgb(255, 102, 0)', // Darker orange points
+            pointRadius: 6,
+            pointHoverRadius: 10,
+            fill: true,
+          },
+        ],
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         scales: {
           x: {
-            title: {
-              display: true,
-              text: 'Semester Number'
-            }
+            title: { display: true, text: 'Semester' },
           },
           y: {
-            title: {
-              display: true,
-              text: 'Obtained CGPA'
-            },
-            beginAtZero: true
-          }
-        }
-      }
+            title: { display: true, text: 'CGPA' },
+            min: 3.5,
+            max: 4.0,
+          },
+        },
+        plugins: {
+          legend: {
+            labels: { font: { size: 14 } },
+          },
+        },
+      },
     });
-  
-    // Show the chart modal when the icon is clicked
-    document.querySelector('.bx.bxs-bar-chart-alt-2').addEventListener('click', function() {
+  }
+
+  // Ensure modal shows correctly with chart
+  document
+    .querySelector('.bx.bxs-bar-chart-alt-2')
+    .addEventListener('click', function () {
       chartModal.show();
+      setTimeout(createChart, 500); // Delay ensures chart renders properly
     });
-    
-  });
-  
-   var semesters = ["1st semester", "2nd Semester", "3rd Semester", "4th semester", "5th semester", "6th semester", "7th semester", "8th semester"];
-  
-    // Function to dynamically generate the course list HTML
-    function generateCourseList() {
-      // Dummy course data (replace with your actual course data)
-      var courseData = [
-        ["Structured Programming", "Calculus", "Computer Fundamental & Ethics"],
-        ["Discrete Math", "Object-Oriented Programming", "Co-ordinate Geometry"],
-        ["Electronics", "Digital Logic Design", "Data Structure", "Applied Statistics", "Fourier Analysis and Laplace transformation"],
-        ["Digital Signal Processing", "Software Development with Java", "Algorithm Desing & Analysis", "Database Management System"],
-        ["Data Communication", "Operating System", "Theory of Computing", "System Analysis & Design"],
-        ["Software Engineering", "Computer Networks", "Computer Architecture", "Artificial Intelligence"],
-        [],
-        [],
-      ];
-  
-      var courseListHTML = '<ul>';
-  
-      courseData.forEach((semesterCourses, index) => {
-        courseListHTML += `<li><strong>${semesters[index]}</strong>: ${semesterCourses.join(', ')}</li>`;
-      });
-  
-      courseListHTML += '</ul>';
-      return courseListHTML;
-    }
-  
-    // Function to show/hide the course list
-    function toggleCourseList() {
-      var courseListContainer = document.getElementById('courseListContainer');
-      var courseListHTML = generateCourseList();
-  
-      // Toggle the visibility of the course list
-      if (courseListContainer.style.display === 'none') {
-        courseListContainer.innerHTML += courseListHTML;
-        courseListContainer.style.display = 'block';
-      } else {
-        courseListContainer.innerHTML = '<p style="color: red;">*Only Departmental(CS) Courses are included here.</p>';
-        courseListContainer.style.display = 'none';
-      }
-    }
-  
-    // Reset the course list visibility when the modal is closed
-    $('#chartModal').on('hidden.bs.modal', function () {
-      var courseListContainer = document.getElementById('courseListContainer');
-      courseListContainer.innerHTML = '<p style="color: red;">*Only CS fundamental Courses are included here.</p>';
-      courseListContainer.style.display = 'none';
+
+  // Ensure the modal chart takes 90% height, course list 10%
+  document
+    .getElementById('chartModal')
+    .addEventListener('shown.bs.modal', function () {
+      cgpaChartCanvas.style.width = '100%';
+      cgpaChartCanvas.style.height = '90%';
+      document.getElementById('courseListContainer').style.height = '10%';
+      createChart(); // Create chart when modal is opened
     });
+
+  // Course List (Always Visible)
+  function generateCourseList() {
+    var courseData = [
+      ['Structured Programming', 'Calculus', 'Computer Fundamental & Ethics'],
+      ['Discrete Math', 'Object-Oriented Programming', 'Co-ordinate Geometry'],
+      [
+        'Electronics',
+        'Digital Logic Design',
+        'Data Structure',
+        'Applied Statistics',
+        'Fourier Analysis and Laplace transformation',
+      ],
+      [
+        'Digital Signal Processing',
+        'Software Development with Java',
+        'Algorithm Design & Analysis',
+        'Database Management System',
+      ],
+      [
+        'Data Communication',
+        'Operating System',
+        'Theory of Computing',
+        'System Analysis & Design',
+      ],
+      [
+        'Software Engineering',
+        'Computer Networks',
+        'Computer Architecture',
+        'Artificial Intelligence',
+      ],
+      [],
+      [],
+    ];
+
+    var courseListHTML = '<ul>';
+    courseData.forEach((semesterCourses, index) => {
+      courseListHTML += `<li><strong>${semesters[index]}</strong>: ${
+        semesterCourses.length
+          ? semesterCourses.join(', ')
+          : 'No courses listed'
+      }</li>`;
+    });
+    courseListHTML += '</ul>';
+
+    var courseListContainer = document.getElementById('courseListContainer');
+    courseListContainer.innerHTML = courseListHTML;
+    courseListContainer.style.display = 'block';
+  }
+
+  // Ensure course list is populated on modal open
+  document
+    .getElementById('chartModal')
+    .addEventListener('shown.bs.modal', function () {
+      generateCourseList();
+    });
+});
