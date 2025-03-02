@@ -1145,7 +1145,13 @@ body.dark .search-field i {
   line-height: 1.4;
   word-break: break-word;
 }
-
+.dark-mode .modal-content {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+.dark-mode #courseListContainer {
+  background-color: #0d0c15;
+  color: #fff;
+}
 /* Responsive Fixes */
 @media (max-width: 945px) {
   .modal-content {
