@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/gallery",
+      "destination": "https://photo-gallery-tofayel.vercel.app"
+    },
+    {
+      "source": "/gallery/:path*",
+      "destination": "https://photo-gallery-tofayel.vercel.app/:path*"
+    }
+  ]
+}
