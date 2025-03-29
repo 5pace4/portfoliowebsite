@@ -1,8 +1,9 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/gallery/:path*",
-      "destination": "https://photo-gallery-tofayel.vercel.app/:path*"
+      "destination": "https://photo-gallery-tofayel.vercel.app/:path*",
+      "permanent": false
     }
   ]
 }
