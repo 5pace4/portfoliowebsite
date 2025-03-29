@@ -4,6 +4,21 @@
     {
       "source": "/gallery",
       "destination": "https://photo-gallery-tofayel.vercel.app"
+    },
+    {
+      "source": "/gallery/(.*)",
+      "destination": "https://photo-gallery-tofayel.vercel.app/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/gallery/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ]
 }
