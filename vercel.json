@@ -3,6 +3,10 @@
     {
       "source": "/gallery/:path*",
       "destination": "https://photo-gallery-tofayel.vercel.app/:path*"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "https://tofayelahmmedbabu.blogspot.com/:path*"
     }
   ]
 }
