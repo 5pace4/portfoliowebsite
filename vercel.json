@@ -8,5 +8,11 @@
       "source": "/blog/:path*",
       "destination": "https://tofayelahmmedbabu.blogspot.com/:path*"
     }
+  ],
+  "headers": [
+    {
+      "source": "/gallery/download-image",
+      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
+    }
   ]
 }
