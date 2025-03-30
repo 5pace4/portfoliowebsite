@@ -8,5 +8,20 @@
       "source": "/blog/:path*",
       "destination": "https://tofayelahmmedbabu.blogspot.com/:path*"
     }
+  ],
+  "headers": [
+    {
+      "source": "/gallery/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://photo-gallery-tofayel.vercel.app"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=\"image.jpg\""
+        }
+      ]
+    }
   ]
 }
