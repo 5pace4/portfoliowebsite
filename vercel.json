@@ -1,8 +1,20 @@
 {
   "rewrites": [
     {
+      "source": "/albums",
+      "destination": "https://photo-gallery-tofayel.vercel.app/albums"
+    },
+    {
+      "source": "/images/(.*)",
+      "destination": "https://photo-gallery-tofayel.vercel.app/images/$1"
+    },
+    {
+      "source": "/proxy-download",
+      "destination": "https://photo-gallery-tofayel.vercel.app/proxy-download"
+    },
+    {
       "source": "/gallery",
-      "destination": "https://photo-gallery-tofayel.vercel.app/#"
+      "destination": "/index.html"
     },
     {
       "source": "/blog/:path*",
@@ -11,15 +23,11 @@
   ],
   "headers": [
     {
-      "source": "/gallery/(.*)",
+      "source": "/images/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://photo-gallery-tofayel.vercel.app"
-        },
-        {
-          "key": "Content-Disposition",
-          "value": "attachment; filename=\"image.jpg\""
+          "value": "*"
         }
       ]
     }
