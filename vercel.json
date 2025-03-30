@@ -1,38 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/albums",
-      "destination": "https://photo-gallery-tofayel.vercel.app/albums"
-    },
-    {
-      "source": "/images/(.*)",
-      "destination": "https://photo-gallery-tofayel.vercel.app/images/$1"
-    },
-    {
-      "source": "/proxy-download",
-      "destination": "https://photo-gallery-tofayel.vercel.app/proxy-download"
-    },
-    {
-      "source": "/gallery",
-      "destination": "https://photo-gallery-tofayel.vercel.app/"
-    },
-    {
-      "source": "/gallery/(.*)",
-      "destination": "https://photo-gallery-tofayel.vercel.app/$1"
+      "source": "/gallery/:path*",
+      "destination": "https://photo-gallery-tofayel.vercel.app/:path*"
     },
     {
       "source": "/blog/:path*",
       "destination": "https://tofayelahmmedbabu.blogspot.com/:path*"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/images/(.*)",
-      "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
-    },
-    {
-      "source": "/proxy-download",
-      "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
     }
   ]
 }
